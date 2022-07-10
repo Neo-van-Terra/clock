@@ -1,0 +1,90 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: radial-gradient(circle at 58% 50%, hsla(89,0%,28%,0.1) 0%, hsla(89,0%,28%,0.1) 60%,transparent 60%, transparent 98%,transparent 98%, transparent 100%),radial-gradient(circle at 36% 79%, hsla(89,0%,28%,0.1) 0%, hsla(89,0%,28%,0.1) 49%,transparent 49%, transparent 99%,transparent 99%, transparent 100%),radial-gradient(circle at 48% 23%, hsla(89,0%,28%,0.1) 0%, hsla(89,0%,28%,0.1) 50%,transparent 50%, transparent 87%,transparent 87%, transparent 100%),radial-gradient(circle at 55% 69%, hsla(89,0%,28%,0.1) 0%, hsla(89,0%,28%,0.1) 3%,transparent 3%, transparent 19%,transparent 19%, transparent 100%),radial-gradient(circle at 38% 69%, hsla(89,0%,28%,0.1) 0%, hsla(89,0%,28%,0.1) 15%,transparent 15%, transparent 33%,transparent 33%, transparent 100%),linear-gradient(45deg, rgb(14, 124, 138),rgb(44, 254, 203));
+    background-attachment:fixed;
+    font-family: 'Raleway';
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+
+.uhr {
+    width: 50%;
+    height: 50%;
+    border: 1px solid rgba(255, 68, 0, 0.095);
+    display: grid;
+    place-items: center;
+}
+
+.ziffernblatt {
+    --uhr-grosse:100%;
+    width: var(--uhr-grosse);
+    height: var(--uhr-grosse);
+    background: radial-gradient(closest-side, rgb(47, 47, 47), rgb(15, 15, 15) 70%);
+    position: relative;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    border: 2px solid blanchedalmond;
+    /* box-shadow: 5px 5px 30px 2px #000000; */
+    
+}
+
+.zeiger {
+    width: 0;
+    height: 0;
+    position: absolute;
+    transform-origin: 50% 100%;
+    bottom: 50%;
+} 
+#kreis{
+    width: calc(var(--uhr-grosse)/20);
+    height: calc(var(--uhr-grosse)/20);
+    background-color: blanchedalmond;
+    top: auto;
+    bottom: auto;
+    border-radius: 50%;
+}
+
+#stunden {
+    border-left: calc(var(--uhr-grosse)/50) solid transparent;
+    border-right: calc(var(--uhr-grosse)/50) solid transparent;
+    border-bottom: calc(var(--uhr-grosse)/4.5) solid blanchedalmond;
+}
+
+#minuten {
+    border-left: calc(var(--uhr-grosse)/60) solid transparent;
+    border-right: calc(var(--uhr-grosse)/60) solid transparent;
+    border-bottom: calc(var(--uhr-grosse)/3) solid blanchedalmond;
+}
+
+#sekunden {
+    border-left: calc(var(--uhr-grosse)/80) solid transparent;
+    border-right: calc(var(--uhr-grosse)/80) solid transparent;
+    border-bottom: calc(var(--uhr-grosse)/2.5) solid rgba(255, 235, 205, 0.2);
+}
+
+span {
+    position: absolute;
+    inset: calc(var(--uhr-grosse)/30);
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+}
+
+b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: calc(var(--uhr-grosse)/10);
+    background: linear-gradient(to top, rgb(44, 254, 203), blanchedalmond 90%);
+    background-clip: text;
+    color: transparent;
+}
