@@ -85,6 +85,7 @@ b{
     display: inline-block;
     font-size: calc(var(--uhr-grosse)/10);
     background: linear-gradient(to top, rgb(44, 254, 203), blanchedalmond 90%);
+    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
